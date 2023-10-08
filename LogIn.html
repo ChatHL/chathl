@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In</title>
+</head>
+<body>
+    <h1>LogIn To Google To Use ChatHL</h1>
+
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAWdsn8GccRSeql7RiPyM0maWs7fprwJR4",
+            authDomain: "chathl-tf.firebaseapp.com",
+            projectId: "chathl-tf",
+            storageBucket: "chathl-tf.appspot.com",
+            messagingSenderId: "1022080549915",
+            appId: "1:1022080549915:web:31a72ce41515974d37e4be",
+            measurementId: "G-VEEN5EHK21"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Google Sign-In button -->
+    <button id="google-sign-in">Sign in with Google</button>
+
+    <script>
+        // Initialize the Google Sign-In SDK
+        var provider = new firebase.auth.GoogleAuthProvider();
+
+        // Add a click event listener to the Google Sign-In button
+        document.getElementById('google-sign-in').addEventListener('click', function() {
+            firebase.auth().signInWithPopup(provider)
+                .then(function(result) {
+                    // User signed in successfully, you can access user information here
+                    var user = result.user;
+                    console.log("User signed in:", user);
+
+                    // Redirect the user to a specific website after successful sign-in
+                    window.location.href = "https://chathl.github.io/beta.html"; // Replace with your desired URL
+                })
+                .catch(function(error) {
+                    // Handle errors here
+                    console.error("Google Sign-In Error:", error);
+                });
+        });
+    </script>
+</body>
+</html>
