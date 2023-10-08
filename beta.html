@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatHL</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #app {
+            display: flex;
+            height: 100vh;
+        }
+        #sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+        }
+        #chat {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        #message-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        #message-input {
+            margin-top: auto;
+        }
+        #message-input input {
+            padding: 5px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="sidebar">
+            <h2>Channels</h2>
+            <!-- List of channels goes here -->
+        </div>
+        <div id="chat">
+            <div id="message-box">
+                <!-- Messages go here -->
+                <div class="message">User 1: Hello</div>
+                <div class="message">User 2: Hi there!</div>
+            </div>
+            <div id="message-input">
+                <input type="text" placeholder="Type a message...">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
